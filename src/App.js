@@ -17,7 +17,7 @@ function App() {
 
   const FetchData = async () =>{
       const apikey = "K5biUivSj1cHvDbsQZRrI3-Oev-BZPrvQHrUzSzILbU";
-      const response = await fetch(`https://api.unsplash.com/photos/random?client_id=${apikey}&count=10`);
+      const response = await fetch(`https://api.unsplash.com/photos/random?client_id=${apikey}`);
       const data = await response.json();
       setposts([...posts,...data]);
   }
