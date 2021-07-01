@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+.App{
+  width: 100%;
+}
+
+
+/* ********************   Navbar start   ******************** */
+
+
+.navbar{
+  padding: 0 50px;
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container{
+  width: 120px;
+}
+
+.logo-container img{
+  width: 100%;
+}
+
+.navbar .header-input-container{
+  width: 450px;
+  height: 38px;
+  border-radius: 30px;
+  background: #EEEEEE;
+}
+
+.navbar .header-input-container input{
+  background: transparent;
+  font-size: 14px;
+}
+
+.navbar .header-input-container .search,
+.navbar .header-input-container .camera{
+  flex: 10%;
+  font-size: 20px;
+  color: #857671;
+  opacity: 1;
+}
+
+.navbar .header-input-container input::placeholder{
+  font-size: 12px;
+  color: #857671;
+  opacity: 1;
+}
+
+
+.navbar .login-container{
+ width: 220px;
+}
+
+.navbar .login-container .login{
+  border:none;
+  width: 90px;
+  height: 35px;
+  margin: 0 5px;
+  font-size: 13px;
+  color: #5d5d5a;
+  font-weight: 600;
+  border-radius: 4px;
+  letter-spacing: .4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.navbar .login-container .login.active{
+  background: #2cb978;
+  color: whitesmoke;
+}
+
+
+.navbar .login-container .login:hover{
+  background: #2cb978;
+  color: whitesmoke;
+}
+
+
+
+
+/* **************************   Header start   ************************* */
+
+.header{
+  width: 100%;
+  height: 88vh;
+  background-size: 100% 100%;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header::after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4));
+}
+
+.header-content-container{
+  position: absolute;
+  width: 100%;
+  max-width: 750px;
+/*     background: red; */
+  z-index: 1;
+}
+
+.header-content-container h1{
+  font-size: 45px;
+  padding-bottom:13px; 
+  color: whitesmoke;
+  opacity: .9;
+}
+
+.header-content-container p{
+  font-size: 16px;
+  padding-bottom:25px; 
+  font-weight: 500;
+  line-height: 26px;
+  color: whitesmoke;
+}
+
+.header-input-container{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 4px;
+}
+
+.header-input-container .search,
+.header-input-container .camera{
+  flex: 7%;
+  opacity: .5;
+}
+
+
+.header-input-container input{
+  flex: 86%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  font-size: 16px;
+  opacity: .6;
+}
+
+.header-input-container input::placeholder{
+  font-size: 14px;
+  font-weight: 600;
+  opacity: .9;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.post-container{
+  margin: 50px auto;
+  width: 95%;
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+}
+
+.post-block{
+  position: relative;
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
+  transition: .3s ease-in;
+}
+
+.post-block .post-img-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.post-block .post-img-container::after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.3));
+  transition: .3s ease-in-out;
+  z-index: -1;
+}
+
+.post-block .post-img-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-block .post-content{
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  display: none;
+}
+
+.post-block .post-content .post-user-left{
+  margin-right:10px; 
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.post-block .post-content .post-user-left img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.post-block .post-content .post-user-right{
+  display: flex;
+  flex-direction: column;
+}
+
+.post-block .post-content .post-user-name{
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+}
+
+.post-block .post-content .post-user-description{
+  max-width: 200px;
+  font-size: 9px;
+  font-weight: 600;
+  color: white;
+  opacity: .9;
+}
+
+.post-block:hover{
+  transform: scale(1.03);
+}
+
+.post-block:hover .post-img-container::after{
+  z-index: 1;
+}
+
+.post-block:hover .post-content{
+  display: flex;
+}
+
+
+
+
+
+/* ***************************   Loader start   **************************** */
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
